@@ -1,0 +1,90 @@
+# Terraform
+
+# Terraform working directory
+
+.terraform/
+
+# Terraform state files
+
+*.tfstate
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.*
+
+# Terraform crash logs
+
+crash.log
+crash.*.log
+
+# Terraform plan files
+
+*.tfplan
+*.plan
+
+# Terraform variable files containing sensitive values
+
+*.tfvars
+*.tfvars.json
+
+# Exception: keep non-sensitive environment variable files
+
+!environments/**/terraform.tfvars
+
+# Terraform CLI configuration
+
+.terraformrc
+terraform.rc
+
+# Provider/plugin binaries
+
+*.exe
+
+# Secrets and credentials
+
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+
+# Azure CLI
+
+.azure/
+
+# IDE / Editor files
+
+.vscode/
+.idea/
+
+# VS Code local history
+
+.history/
+
+# OS files
+
+# Windows
+
+Thumbs.db
+Desktop.ini
+
+# macOS
+
+.DS_Store
+
+# Logs
+
+*.log
+
+# Temporary files
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# GitHub Actions local files
+
+.act/
+.github/.cache/
