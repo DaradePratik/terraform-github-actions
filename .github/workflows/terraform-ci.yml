@@ -39,6 +39,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             VALIDATE_ALL_CODEBASE: false
             IGNORE_GITIGNORED_FILES: true
+            DEFAULT_BRANCH: main
 
         - name: Terraform validate
           run: terraform validate
