@@ -41,6 +41,7 @@ jobs:
             FILTER_REGEX_EXCLUDE: (\.terraform/.*)
             DEFAULT_BRANCH: main
 
+
         - name: Terraform validate
           run: terraform validate
         
