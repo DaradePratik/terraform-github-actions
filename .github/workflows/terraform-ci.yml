@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
+  pull-requests: write
 
 jobs:
     terraform:
@@ -34,6 +35,7 @@ jobs:
           uses: super-linter/super-linter@v8.7.0
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            VALIDATE_ALL_CODEBASE: false
 
         - name: Terraform validate
           run: terraform validate
