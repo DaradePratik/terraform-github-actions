@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
+  pull-requests: write
 
 jobs:
     terraform:
@@ -16,6 +17,8 @@ jobs:
         steps:
         - name: Checkout repo
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
 
         - name: Azure Login
           uses: azure/login@v2
@@ -34,6 +37,9 @@ jobs:
           uses: super-linter/super-linter@v8.7.0
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            VALIDATE_ALL_CODEBASE: false
+            IGNORE_GITIGNORED_FILES: true
+            DEFAULT_BRANCH: main
 
         - name: Terraform validate
           run: terraform validate
